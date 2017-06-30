@@ -41,33 +41,98 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.home', {
+    url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
       }
     }
-  });
+  })
+
+  .state('app.meditacao', {
+    url: '/home/meditacao',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/meditacao.html',
+        controller: 'MeditacaoController'
+      }
+    }
+  })
+
+  .state('app.exercicios', {
+    url: '/home/exercicios',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/exercicios.html',
+        controller: 'ExerciciosController'
+      }
+    }
+  })
+
+  .state('app.tutorial', {
+    url: '/home/exercicios/tutorial',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tutorial.html',
+        controller: 'TutorialController'
+      }
+    }
+  })
+
+  .state('app.videos', {
+    url: '/home/exercicios/videos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/videos.html',
+        controller: 'VideosController'
+      }
+    }
+  })
+
+  .state('app.postura', {
+    url: '/home/postura',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/postura.html',
+        controller: 'PosturaController'
+      }
+    }
+  })
+
+  .state('app.glossario', {
+    url: '/home/glossario',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/glossario.html',
+        controller: 'GlossarioController'
+      }
+    }
+  })
+
+  .state('app.locais', {
+    url: '/home/locais',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/locais.html',
+        controller: 'LocaisController'
+      }
+    }
+  })
+
+  .state('app.mapa', {
+    url: '/home/mapa',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/mapa.html',
+        controller: 'MapaController'
+      }
+    }
+  })
+
+
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
 });

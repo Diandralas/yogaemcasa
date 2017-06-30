@@ -41,16 +41,41 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+.controller('HomeController', function($scope) {
+  $scope.home = [
+    { title: 'Meditação', pagina: 'meditacao', id: 1},
+    { title: 'Exercícios', pagina: 'exercicios',id: 2 },
+    { title: 'Postura', pagina:'postura',id: 3 },
+    { title: 'Glossário', pagina: 'glossario',id: 4 },
+    { title: 'Locais', pagina: 'locais',id: 5 },
+    { title: 'Mapa', pagina: 'mapa',id: 6 }
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('MeditacaoController', function($scope, $stateParams) {
+})
+
+.controller('ExerciciosController', function($scope, $stateParams) {
+  $scope.exercicios = [
+    { title: 'Tutorial', pagina: 'tutorial', id: 21},
+    { title: 'Vídeos', pagina: 'videos', id: 22 }
+  ];
+})
+
+.controller('PosturaController', function($scope, $stateParams) {
+})
+
+.controller('GlossarioController', function($scope, $stateParams) {
+})
+
+.controller('LocaisController', function($scope, $stateParams) {
+})
+
+.controller('MapaController', function($scope, $stateParams) {
+})
+
+.controller('TutorialController', function($scope, $stateParams) {
+})
+
+.controller('VideosController', function($scope, $stateParams) {
 });

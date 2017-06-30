@@ -1,0 +1,9 @@
+<ion-view view-title="Exercícios">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in exercicios" href="#/app/home/exercicios/{{item.pagina}}">
+        {{item.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
