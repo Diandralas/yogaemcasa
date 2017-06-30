@@ -69,6 +69,56 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LocaisController', function($scope, $stateParams) {
+  $scope.locais = [
+    {id: "1",
+    local: "Parque do Ibirapuera",
+    endereco: "Praça do Porquinho (portão 6) e aos domingos na Serraria (portão 7)",
+    bairro: "Ibirapuera",
+    horario_funcionamento: "Todo sábado e domingo, às 9h",
+    contato: "Anderson Gouveia e Rafael Sanchos",
+    telefone: ""
+  },
+    {id: "2",
+    local: "Parque Villa-Lobos",
+    endereco: "próximo à Casa do João de Barro",
+    bairro: "Lapa",
+    horario_funcionamento: "Todo sábado, faça chuva ou faça sol, às 10h",
+    contato: "Natália Andrade",
+    telefone: ""
+  },
+    {id: "3",
+    local: "",
+    endereco: "",
+    bairro: "",
+    horario_funcionamento: "",
+    contato: "",
+    telefone: ""
+  },
+    {id: "4",
+    local: "",
+    endereco: "",
+    bairro: "",
+    horario_funcionamento: "",
+    contato: "",
+    telefone: ""
+  },
+    {id: "5",
+    local: "",
+    endereco: "",
+    bairro: "",
+    horario_funcionamento: "",
+    contato: "",
+    telefone: ""
+  },
+    {id: "6",
+    local: "",
+    endereco: "",
+    bairro: "",
+    horario_funcionamento: "",
+    contato: "",
+    telefone: ""
+  }
+  ];
 })
 
 .controller('MapaController', function($scope, $stateParams) {
