@@ -2,12 +2,11 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="item in locais" href="#/app/home/locais/{{item.pagina}}">
-        <p>{{item.local}}</p>
-        <p>{{item.endereco}}</p>
-        <p>{{item.bairro}}</p>
-        <p>{{item.horario_funcionamento}}</p>
-        <p>{{item.contato}}</p>
-        <p>{{item.telefone}}</p>
+        <h2>{{item.local}}</h2>
+        <p>End.: {{item.endereco}} - {{item.bairro}}</p>
+        <p>Horário: {{item.horario_funcionamento}}</p>
+        <p>Instrutor/Contato: {{item.contato}}</p>
+        <p>Fone: {{item.telefone}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
