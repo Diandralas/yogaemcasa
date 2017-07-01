@@ -41,25 +41,33 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('HomeController', function($scope) {
+.controller('HomeController', function($scope, $state) {
   $scope.home = [
-    { title: 'Meditação', pagina: 'meditacao', id: 1},
-    { title: 'Exercícios', pagina: 'exercicios',id: 2 },
-    { title: 'Postura', pagina:'postura',id: 3 },
-    { title: 'Glossário', pagina: 'glossario',id: 4 },
-    { title: 'Locais', pagina: 'locais',id: 5 },
-    { title: 'Mapa', pagina: 'mapa',id: 6 }
+    { title: 'Meditação', pagina: 'meditacao', id: 1, img: 'img/meditacao.png'},
+    { title: 'Exercícios', pagina: 'exercicios',id: 2, img: 'img/exercicios.png' },
+    { title: 'Postura', pagina:'postura',id: 3, img: 'img/postura.png' },
+    { title: 'Glossário', pagina: 'glossario',id: 4, img: 'img/glossario.png' },
+    { title: 'Locais', pagina: 'locais',id: 5, img: 'img/locais.png' },
+    { title: 'Mapa', pagina: 'mapa',id: 6, img: 'img/mapa.png' }
   ];
+
+  $scope.acessar = function(pagina){
+    $state.go('app.'+pagina);
+  }
 })
 
 .controller('MeditacaoController', function($scope, $stateParams) {
 })
 
-.controller('ExerciciosController', function($scope, $stateParams) {
+.controller('ExerciciosController', function($scope, $stateParams, $state) {
   $scope.exercicios = [
-    { title: 'Tutorial', pagina: 'tutorial', id: 21},
-    { title: 'Vídeos', pagina: 'videos', id: 22 }
+    { title: 'Tutorial', pagina: 'tutorial', id: 21, img: 'img/tutorial.png'},
+    { title: 'Vídeos', pagina: 'videos', id: 22, img: 'img/videos.png' }
   ];
+
+  $scope.acessar = function(pagina){
+    $state.go('app.'+pagina);
+  }
 })
 
 .controller('PosturaController', function($scope, $stateParams) {

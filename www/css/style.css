@@ -1,3 +1,25 @@
 ng-map{
   height: 550px;
 }
+
+.pagina-home img{
+  width: 50%;
+  margin: 20px auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.pagina-home{
+  width: 100%;
+}
+
+.pagina-exercicios img{
+  width: 100%;
+  margin: 10% auto;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.pagina-exercicios{
+  width: 100%;
+}

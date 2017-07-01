@@ -1,9 +1,10 @@
 <ion-view view-title="Exercícios">
-  <ion-content>
-    <ion-list>
+  <ion-content class="pagina-exercicios">
+    <!-- <ion-list>
       <ion-item ng-repeat="item in exercicios" href="#/app/home/exercicios/{{item.pagina}}">
         {{item.title}}
       </ion-item>
-    </ion-list>
+    </ion-list> -->
+    <img ng-repeat="item in exercicios" ng-src="{{item.img}}" alt="{{item.title}}" ng-click='acessar(item.pagina)'>
   </ion-content>
 </ion-view>

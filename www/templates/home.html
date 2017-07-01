@@ -1,9 +1,10 @@
 <ion-view view-title="Yoga">
-  <ion-content>
-    <ion-list>
+  <ion-content class="pagina-home">
+    <!-- <ion-list>
       <ion-item ng-repeat="item in home" href="#/app/home/{{item.pagina}}">
         {{item.title}}
       </ion-item>
-    </ion-list>
+    </ion-list> -->
+    <img ng-repeat="item in home" ng-src="{{item.img}}" alt="{{item.title}}" ng-click='acessar(item.pagina)'>
   </ion-content>
 </ion-view>
