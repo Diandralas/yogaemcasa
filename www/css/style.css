@@ -1,5 +1,5 @@
 ng-map{
-  height: 550px;
+  height: 600px;
 }
 
 .pagina-home img{
@@ -16,8 +16,8 @@ ng-map{
 .pagina-exercicios img{
   width: 100%;
   margin: 10% auto;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
 .pagina-exercicios{
