@@ -2,6 +2,7 @@ ng-map{
   height: 600px;
 }
 
+
 .pagina-home img{
   width: 50%;
   margin: 20px auto;
@@ -11,7 +12,8 @@ ng-map{
 
 .pagina-home{
   width: 100%;
-}
+  background-color: #f2dcb5;
+  }
 
 .pagina-exercicios img{
   width: 100%;
