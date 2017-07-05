@@ -24,3 +24,20 @@ ng-map{
 .pagina-exercicios{
   width: 100%;
 }
+
+.pagina-glossario{
+  width: 100%;
+  text-align: center;
+}
+
+#buda{
+background-image: url("../img/buda.png");
+background-position: center;
+background-size: cover;
+}
+
+#fundo{
+  background-image: url("../img/fundo.png");
+  background-position: center;
+  background-size: cover;
+}
