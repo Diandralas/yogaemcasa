@@ -30,6 +30,10 @@ ng-map{
   text-align: center;
 }
 
+.pagina-videos h3{
+  text-align: center;
+}
+
 #buda{
 background-image: url("../img/buda.png");
 background-position: center;
