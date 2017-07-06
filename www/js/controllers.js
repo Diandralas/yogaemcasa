@@ -76,6 +76,7 @@ angular.module('starter.controllers', [])
 .controller('GlossarioController', function($scope, $stateParams) {
 })
 
+/*
 .controller('LocaisController', function($scope, $stateParams) {
   $scope.locais = [
     { id: "1",
@@ -149,9 +150,10 @@ angular.module('starter.controllers', [])
     horario_funcionamento: "Todo sábado, às 9h",
     contato: "Antonio Prates",
     telefone: ""
-    },
+    }
   ];
 })
+*/
 
 .controller('MapaController', function($scope, $stateParams) {
 })
