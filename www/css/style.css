@@ -2,7 +2,6 @@ ng-map{
   height: 600px;
 }
 
-
 .pagina-home img{
   width: 50%;
   margin: 20px auto;
@@ -28,10 +27,22 @@ ng-map{
 .pagina-glossario{
   width: 100%;
   text-align: center;
+  padding: 20px;
+}
+
+.termos{
+  text-align: center;
+  font-size: 15px;
+  font-family: sans-serif;
 }
 
 .pagina-videos h3{
   text-align: center;
+}
+
+.pagina-tutorial img{
+  width: 100%;
+  padding-top: 10px;
 }
 
 #buda{
