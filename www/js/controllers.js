@@ -70,12 +70,17 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('MeditacaoController', function($scope, $stateParams) {
+})
+
 .controller('PosturaController', function($scope, $stateParams) {
 })
 
 .controller('GlossarioController', function($scope, $stateParams) {
 })
 
+.controller('ConfigController', function($scope, $stateParams) {
+})
 /*
 .controller('LocaisController', function($scope, $stateParams) {
   $scope.locais = [

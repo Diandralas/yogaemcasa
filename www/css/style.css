@@ -64,6 +64,10 @@ ng-map{
   line-height: 2.5;
 }
 
+.facebook {
+margin-top: 50px;
+text-align: center;
+}
 
 #buda{
 background-image: url("../img/buda.png");

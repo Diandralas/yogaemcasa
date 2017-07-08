@@ -131,6 +131,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMap'])
     }
   })
 
+  .state('app.config', {
+    url: '/meuperfil/config',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/config.html',
+        controller: 'ConfigController'
+      }
+    }
+  })
+
 
 
   // if none of the above states are matched, use this as the fallback
