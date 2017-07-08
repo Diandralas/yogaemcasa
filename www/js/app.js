@@ -32,11 +32,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMap'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.meuperfil', {
+    url: '/meuperfil',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/meuperfil.html'
       }
     }
   })
