@@ -41,7 +41,15 @@ ng-map{
 .pagina-glossario{
   width: 100%;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+}
+
+.pagina-glossario li{
+  padding-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-weight: 500;
 }
 
 .termos{
