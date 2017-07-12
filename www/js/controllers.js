@@ -73,14 +73,31 @@ angular.module('starter.controllers', [])
 .controller('MeditacaoController', function($scope, $stateParams) {
 })
 
+.controller('LoginController', function($scope, $stateParams) {
+})
+
 .controller('PosturaController', function($scope, $stateParams) {
 })
 
-.controller('GlossarioController', function($scope, $stateParams) {
-})
+.controller('GlossarioController', function($scope, $http, $state, $ionicPopup) {
+  $scope.dados = {};
 
-.controller('ConfigController', function($scope, $stateParams) {
-})
+  $http.get('http://localhost:3000/glossario').then(function(resposta){
+    $scope.glossario = resposta.data;
+  });
+
+  $scope.showPopup = function(item) {
+    var alertPopup = $ionicPopup.alert({
+      title: item.palavra,
+      template: item.significado
+    });
+
+    alertPopup.then(function(res) {
+      console.log('Callback');
+    });
+  };
+}
+
 /*
 .controller('LocaisController', function($scope, $stateParams) {
   $scope.locais = [
@@ -160,11 +177,5 @@ angular.module('starter.controllers', [])
 })
 */
 
-.controller('MapaController', function($scope, $stateParams) {
-})
 
-.controller('TutorialController', function($scope, $stateParams) {
-})
-
-.controller('VideosController', function($scope, $stateParams) {
-});
+)

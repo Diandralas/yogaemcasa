@@ -24,6 +24,20 @@ ng-map{
   width: 100%;
 }
 
+.pagina-respirar{
+  padding: 12px;
+  padding-top: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#dicas{
+  font-size: 12px;
+  font-weight: bold;
+  background-color: linear-gradient( 135deg, #FFF5C3 0%; #9452A5 100%);
+}
+
 .pagina-glossario{
   width: 100%;
   text-align: center;

@@ -5,11 +5,20 @@
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="procure">
-      </label>
-    </div>
+        <input type="text" placeholder="procure" ng-model="palavraBusca" ng-enter="buscar()">
+        <!-- <option ng-repeat="glossario in glossarios" value="{{glossario._id}}"> -->
+        </label>
+        <ul>
+          <li ng-repeat="item in glossario | filter:palavraBusca" ng-click="showPopup(item)"> <!-- o item é o objeto inteiro, ai depois vc só seleciona qual item, e o glossario é um vetor de objetos e o item é cada objeto dentro deste vetor -->
+            {{item.palavra}}
+          </li>
+        </ul>
+        <!-- <div ng-repeat="item in glossario | filter:palavraBusca" ng-click="showPopup(item)">
+          {{item.palavra}}
+        </div> -->
+      </div>
 
-    <div class="termos">
+      <!-- <div class="termos">
       <p>
       <p>  Asanas:  Quando falamos em Yoga a primeira imagem que nos vem a mente é  de alguém numa posição muito estranha que desafia as leis da gravidade. Cada postura que vês no Yoga é um Asana, ou seja, Asana são as posturas (ou posições) que vês os yogis ou as yoginis a fazer.
       <p>  Chakras: Os primeiros Yogis falam-nos do sistema de energia humana. Para eles este sistema é composto por 7 centros de energia localizados ao longo da nossa coluna. Estes centros são chamados de Chakras. A sua ordem é Raiz, Sacral, Plexo Solar, Coração, Garganta, Terceiro Olho e a Coroa.
@@ -24,6 +33,6 @@
       <p>  Sutras: Os Sutras são textos clássicos escritos em sânscrito. Eles abordam toda a temática da prática do Yoga e dos ensinamentos para a vida.
       <p>  Vinyasa: É a transição entre posturas sem quebrar o ritmo de respiração, criando um movimento fluido.
       <p>  Yogi ou Yogini: Um Yogi é alguém que prática Yoga, se for mulher usamos o termo Yogini.
-          </div>
+    </div> -->
   </ion-content>
 </ion-view>
