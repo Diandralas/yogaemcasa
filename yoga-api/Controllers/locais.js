@@ -1,11 +1,12 @@
 var ObjectID = require('mongodb').ObjectID;
 
 // lista locais
-exports.ordenar = function (req, res) {
+exports.ordenar = function (req, res, $scope) {
   req.db.collection('locais').find().toArray(function(err, loc) {
     if (err) {
-      return res.sendStatus(503);
-    }
+      //return res.sendStatus(503);
+      return console.log(err);
+    };
 
     res.send(loc);
   });

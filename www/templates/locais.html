@@ -1,6 +1,14 @@
 <ion-view view-title="Locais">
-  <ion-content>
-    <ion-list>
+  <ion-content id="budaLoc" class="pagina-locais">
+    <img src="img/local-derose.png">
+
+    <ul class="list">
+      <li ng-repeat="item in locais | filter:localBusca" ng-click="showPopup(item)"> <!-- o item é o objeto inteiro, ai depois vc só seleciona qual item, e o glossario é um vetor de objetos e o item é cada objeto dentro deste vetor -->
+          <img src="img/lotus.png">
+          <p>{{item.local}}</p>
+      </li>
+    </ul>
+    <!--ion-list>
       <ion-item ng-repeat="item in locais" href="#/app/home/locais/{{item.pagina}}">
         <h2>{{item.local}}</h2>
         <p>End.: {{item.endereco}} - {{item.bairro}}</p>
@@ -8,6 +16,6 @@
         <p>Instrutor/Contato: {{item.contato}}</p>
         <p>Fone: {{item.telefone}}</p>
       </ion-item>
-    </ion-list>
+    </ion-list-->
   </ion-content>
 </ion-view>

@@ -98,12 +98,25 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('LocaisController', function($scope, $stateParams, $http){
+.controller('LocaisController', function($scope, $stateParams, $http, $ionicPopup){
   $scope.locais = {};
 
   $http.get('http://localhost:3000/locais').then(function(resposta){
     $scope.locais = resposta.data;
   });
+
+  $scope.showPopup = function(item) {
+    var alertPopup = $ionicPopup.alert({
+      title: item.local,
+      template: item.endereco + " - " + item.bairro + " -  Horário:  " + item.horario_funcionamento
+       + " - " + "Instrutor/Contato: " + item.contato
+    });
+
+    alertPopup.then(function(res) {
+      console.log('Callback');
+    });
+  };
+
 })
     // { id: "1",
     //   local: "Parque do Ibirapuera",
@@ -177,3 +190,12 @@ angular.module('starter.controllers', [])
     // contato: "Antonio Prates",
     // telefone: ""
     // }
+
+    .controller('MapaController', function($scope, $stateParams) {
+    })
+
+    .controller('TutorialController', function($scope, $stateParams) {
+    })
+
+    .controller('VideosController', function($scope, $stateParams) {
+    });

@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 // inicializa mongo e expoe para o express
 app.use(expressMongoDb('mongodb://localhost:27017/yoga'));
 
-//libera acesso à API de qualquer host/cliente
+//libera acesso à API de qualquer host/cliente. Para conectar com o Front-End geral.
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

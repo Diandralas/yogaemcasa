@@ -52,6 +52,21 @@ ng-map{
   font-weight: 500;
 }
 
+.pagina-locais{
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.pagina-locais li{
+  padding-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-weight: 500;
+}
+
+
 .termos{
   text-align: center;
   font-size: 15px;
@@ -92,6 +107,12 @@ text-align: center;
 }
 
 #buda{
+background-image: url("../img/buda.png");
+background-position: center;
+background-size: cover;
+}
+
+#budaLoc{
 background-image: url("../img/buda.png");
 background-position: center;
 background-size: cover;
