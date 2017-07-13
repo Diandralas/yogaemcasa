@@ -123,3 +123,13 @@ background-size: cover;
   background-position: center;
   background-size: cover;
 }
+
+#login-pagina{
+  background-image: url("../img/yoga-sunset.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.meu-padding{
+  margin-top: 340px;
+}
