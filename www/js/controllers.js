@@ -79,6 +79,9 @@ angular.module('starter.controllers', [])
 .controller('PosturaController', function($scope, $stateParams) {
 })
 
+.controller('ConfigController', function($scope, $stateParams) {
+})
+
 .controller('GlossarioController', function($scope, $http, $state, $ionicPopup) {
   $scope.dados = {};
 
@@ -125,7 +128,17 @@ angular.module('starter.controllers', [])
   $http.get('http://localhost:3000/mapa').then(function(resposta){
     $scope.pins = resposta.data;
   });
-  
+  $scope.showPopup = function(item) {
+    var alertPopup = $ionicPopup.alert({
+      title: item.local,
+      template: item.horario_funcionamento
+    });
+
+    alertPopup.then(function(res) {
+      console.log('Callback');
+    });
+  };
+
 })
 
 
