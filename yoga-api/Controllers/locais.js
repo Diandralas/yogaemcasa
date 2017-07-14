@@ -35,3 +35,17 @@ exports.apagar = function (req, res) {
     res.sendStatus(200);
   });
 };
+
+// altera novo local
+exports.alterar = function (req, res) {
+  var id = req.params.id;
+  
+  req.db.collection('locais').update({_id: ObjectID(id)}, { $set: req.body }, function(err, result) {
+    if (err) {
+      //return res.sendStatus(503);
+      return console.log(err);
+    }
+
+    res.sendStatus(201);
+  });
+};
