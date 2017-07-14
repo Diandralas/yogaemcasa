@@ -85,7 +85,7 @@ angular.module('starter.controllers', [])
 .controller('GlossarioController', function($scope, $http, $state, $ionicPopup) {
   $scope.dados = {};
 
-  $http.get('http://localhost:3000/glossario').then(function(resposta){
+  $http.get('http://45.55.207.220:3000/glossario').then(function(resposta){
     $scope.glossario = resposta.data;
   });
 
@@ -104,7 +104,7 @@ angular.module('starter.controllers', [])
 .controller('LocaisController', function($scope, $stateParams, $http, $ionicPopup){
   $scope.locais = {};
 
-  $http.get('http://localhost:3000/locais').then(function(resposta){
+  $http.get('http://45.55.207.220:3000/locais').then(function(resposta){
     $scope.locais = resposta.data;
   });
 
@@ -125,7 +125,7 @@ angular.module('starter.controllers', [])
 
 .controller('MapaController', function($scope, $stateParams, $http, $ionicPopup) {
   $scope.pins = [];
-  $http.get('http://localhost:3000/mapa').then(function(resposta){
+  $http.get('http://45.55.207.220:3000/mapa').then(function(resposta){
     $scope.pins = resposta.data;
   });
   $scope.showPopup = function(item) {
