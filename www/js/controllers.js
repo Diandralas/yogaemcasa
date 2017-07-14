@@ -79,6 +79,9 @@ angular.module('starter.controllers', [])
 .controller('PosturaController', function($scope, $stateParams) {
 })
 
+.controller('ConfigController', function($scope, $stateParams) {
+})
+
 .controller('GlossarioController', function($scope, $http, $state, $ionicPopup) {
   $scope.dados = {};
 
@@ -109,7 +112,7 @@ angular.module('starter.controllers', [])
     var alertPopup = $ionicPopup.alert({
       title: item.local,
       template: item.endereco + " - " + item.bairro + " -  Horário:  " + item.horario_funcionamento
-       + " - " + "Instrutor/Contato: " + item.contato
+      + " - " + "Instrutor/Contato: " + item.contato
     });
 
     alertPopup.then(function(res) {
@@ -118,84 +121,112 @@ angular.module('starter.controllers', [])
   };
 
 })
-    // { id: "1",
-    //   local: "Parque do Ibirapuera",
-    //   endereco: "Praça do Porquinho (portão 6) e aos domingos na Serraria (portão 7)",
-    //   bairro: "Ibirapuera",
-    //   horario_funcionamento: "Todo sábado e domingo, às 9h",
-    //   contato: "Anderson Gouveia e Rafael Sanchos",
-    //   telefone: ""
-    // },
-    // { id: "2",
-    //   local: "Parque Villa-Lobos",
-    //   endereco: "próximo à Casa do João de Barro",
-    //   bairro: "Lapa",
-    //   horario_funcionamento: "Todo sábado, faça chuva ou faça sol, às 10h",
-    //   contato: "Natália Andrade",
-    //   telefone: ""
-    // },
-    // { id: "3",
-    //   local: "Parque Burle Marx",
-    //   endereco: "Avenida Dona Helena Pereira de Moraes, 200",
-    //   bairro: "Morumbi",
-    //   horario_funcionamento: "Todo quarto domingo do mês, às 10h",
-    //   contato: "Renata Barcellini",
-    //   telefone: ""
-    // },
-    // { id: "4",
-    //   local: "Parque Buenos Aires",
-    //   endereco: "Av. Angélica, 1500",
-    //   bairro: "Higienópolis",
-    //   horario_funcionamento: "Todo primeiro domingo do mês, às 11h.",
-    //   contato: "Natália Andrade",
-    //   telefone: ""
-    // },
-    // { id: "5",
-    //   local: "Parque Severo Gomes",
-    //   endereco: "R. Píres de Oliveira, 356",
-    //   bairro: "Granja Julieta",
-    //   horario_funcionamento: "Todos os sábados, às 12h30.",
-    //   contato: "Marcos Eiji",
-    //   telefone: ""
-    // },
-    // { id: "7",
-    //   local: "Parque Ceret",
-    //   endereco: "R. Canuto Abreu, s/n",
-    //   bairro: "Tatuapé",
-    //   horario_funcionamento: "Todo sábado, às 9h",
-    //   contato: "Thiago Ferreira",
-    //   telefone: ""
-    // },
-    // { id: "8",
-    //   local: "Alphaville",
-    //   endereco: "Al. Mamoré com Al. Itapecuru",
-    //   bairro: "Alphaville Industrial",
-    //   horario_funcionamento: "Todo primeiro sábado do mês, às 10h",
-    //   contato: "Alessandra Filipini",
-    //   telefone: ""
-    // },
-    // { id: "9",
-    // local: "São Bernardo do Campo",
-    // endereco: "Parque Raphael Lazzuri",
-    // bairro: "",
-    // horario_funcionamento: "Duas vezes por mês, aos domingos, a cada 15 dias, às 10h.",
-    // contato: "Tatiana Uehoka",
-    // telefone: ""
-    // },
-    // { id: "10",
-    // local: "Itú",
-    // endereco: "Gramado ao lado do Container Sucos",
-    // bairro: "",
-    // horario_funcionamento: "Todo sábado, às 9h",
-    // contato: "Antonio Prates",
-    // telefone: ""
-    // }
 
-    .controller('MapaController', function($scope, $stateParams) {
-    })
 
-    .controller('TutorialController', function($scope, $stateParams) {
-    })
-
-    .controller('VideosController', function($scope, $stateParams) {
+.controller('MapaController', function($scope, $stateParams, $http, $ionicPopup) {
+  $scope.pins = [];
+  $http.get('http://localhost:3000/mapa').then(function(resposta){
+    $scope.pins = resposta.data;
+  });
+  $scope.showPopup = function(item) {
+    var alertPopup = $ionicPopup.alert({
+      title: item.local,
+      template: item.horario_funcionamento
     });
+
+    alertPopup.then(function(res) {
+      console.log('Callback');
+    });
+  };
+
+})
+
+
+// { id: "1",
+//   local: "Parque do Ibirapuera",
+//   endereco: "Praça do Porquinho (portão 6) e aos domingos na Serraria (portão 7)",
+//   bairro: "Ibirapuera",
+//   horario_funcionamento: "Todo sábado e domingo, às 9h",
+//   contato: "Anderson Gouveia e Rafael Sanchos",
+//   telefone: "",
+//   coordenadas: [-23.5874162,-46.6598223]
+// },
+// { id: "2",
+//   local: "Parque Villa-Lobos",
+//   endereco: "próximo à Casa do João de Barro",
+//   bairro: "Lapa",
+//   horario_funcionamento: "Todo sábado, faça chuva ou faça sol, às 10h",
+//   contato: "Natália Andrade",
+//   telefone: "",
+//   coordenadas: [-23.5462884,-46.7262012]
+// },
+// { id: "3",
+//   local: "Parque Burle Marx",
+//   endereco: "Avenida Dona Helena Pereira de Moraes, 200",
+//   bairro: "Morumbi",
+//   horario_funcionamento: "Todo quarto domingo do mês, às 10h",
+//   contato: "Renata Barcellini",
+//   telefone: "",
+//   coordenadas: [-23.6346488,-46.7263886]
+// },
+// { id: "4",
+//   local: "Parque Buenos Aires",
+//   endereco: "Av. Angélica, 1500",
+//   bairro: "Higienópolis",
+//   horario_funcionamento: "Todo primeiro domingo do mês, às 11h.",
+//   contato: "Natália Andrade",
+//   telefone: "",
+//   coordenadas: [-23.5458211,-46.660047]
+// },
+// { id: "5",
+//   local: "Parque Severo Gomes",
+//   endereco: "R. Píres de Oliveira, 356",
+//   bairro: "Granja Julieta",
+//   horario_funcionamento: "Todos os sábados, às 12h30.",
+//   contato: "Marcos Eiji",
+//   telefone: "",
+//   coordenadas: [-23.6376914,-46.7071982]
+// },
+// { id: "7",
+//   local: "Parque Ceret",
+//   endereco: "R. Canuto Abreu, s/n",
+//   bairro: "Tatuapé",
+//   horario_funcionamento: "Todo sábado, às 9h",
+//   contato: "Thiago Ferreira",
+//   telefone: "",
+//   coordenadas: [-23.5555707,-46.568358]
+// },
+// { id: "8",
+//   local: "Alphaville",
+//   endereco: "Al. Mamoré com Al. Itapecuru",
+//   bairro: "Alphaville Industrial",
+//   horario_funcionamento: "Todo primeiro sábado do mês, às 10h",
+//   contato: "Alessandra Filipini",
+//   telefone: "",
+//   coordenadas: [-23.4919684,-46.8471085]
+// },
+// { id: "9",
+// local: "São Bernardo do Campo",
+// endereco: "Parque Raphael Lazzuri",
+// bairro: "",
+// horario_funcionamento: "Duas vezes por mês, aos domingos, a cada 15 dias, às 10h.",
+// contato: "Tatiana Uehoka",
+// telefone: "",
+// coordenadas: [-23.6801734,-46.5604958]
+// },
+// { id: "10",
+// local: "Itú",
+// endereco: "Gramado ao lado do Container Sucos",
+// bairro: "",
+// horario_funcionamento: "Todo sábado, às 9h",
+// contato: "Antonio Prates",
+// telefone: "",
+// coordenadas: [-23.2625411,-47.292643]
+// }
+
+
+.controller('TutorialController', function($scope, $stateParams) {
+})
+
+.controller('VideosController', function($scope, $stateParams) {
+});

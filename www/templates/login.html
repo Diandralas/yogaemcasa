@@ -1,11 +1,11 @@
-<ion-modal-view>
-  <ion-header-bar>
+<ion-modal-view id="login-pagina">
+  <!-- <ion-header-bar class="meu-padding">
     <h1 class="title">Login</h1>
       <div class="buttons">
       <button class="button button-clear" ng-click="closeLogin()">Close</button>
     </div>
-  </ion-header-bar>
-  <ion-content>
+  </ion-header-bar> -->
+  <ion-content class="meu-padding">
     <form ng-submit="doLogin()">
       <div class="list">
         <label class="item item-input">
@@ -17,7 +17,7 @@
           <input type="password" ng-model="loginData.password">
         </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
+          <button class="button button-block button-dark" type="submit">Login</button>
         </label>
       </div>
     </form>
