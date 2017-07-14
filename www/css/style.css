@@ -32,6 +32,17 @@ ng-map{
   text-align: center;
 }
 
+.pagina-medita p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+
+.pagina-videos h3{
+  text-align: center;
+  color: #413049 ;
+  font-family: 'Raleway', sans-serif;
+  }
+
 #dicas{
   font-size: 12px;
   font-weight: bold;
