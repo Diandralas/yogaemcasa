@@ -34,3 +34,4 @@ app.post('/glossario', GlossarioController.criar);
 app.get('/locais', LocaisController.ordenar);
 app.post('/locais', LocaisController.atualizar);
 app.delete('/locais', LocaisController.apagar);
+app.get('/mapa', LocaisController.ordenar);

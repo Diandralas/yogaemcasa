@@ -118,13 +118,25 @@ angular.module('starter.controllers', [])
   };
 
 })
+
+
+.controller('MapaController', function($scope, $stateParams, $http, $ionicPopup) {
+  $scope.pins = [];
+  $http.get('http://localhost:3000/mapa').then(function(resposta){
+    $scope.pins = resposta.data;
+  });
+  
+})
+
+
 // { id: "1",
 //   local: "Parque do Ibirapuera",
 //   endereco: "Praça do Porquinho (portão 6) e aos domingos na Serraria (portão 7)",
 //   bairro: "Ibirapuera",
 //   horario_funcionamento: "Todo sábado e domingo, às 9h",
 //   contato: "Anderson Gouveia e Rafael Sanchos",
-//   telefone: ""
+//   telefone: "",
+//   coordenadas: [-23.5874162,-46.6598223]
 // },
 // { id: "2",
 //   local: "Parque Villa-Lobos",
@@ -132,7 +144,8 @@ angular.module('starter.controllers', [])
 //   bairro: "Lapa",
 //   horario_funcionamento: "Todo sábado, faça chuva ou faça sol, às 10h",
 //   contato: "Natália Andrade",
-//   telefone: ""
+//   telefone: "",
+//   coordenadas: [-23.5462884,-46.7262012]
 // },
 // { id: "3",
 //   local: "Parque Burle Marx",
@@ -140,7 +153,8 @@ angular.module('starter.controllers', [])
 //   bairro: "Morumbi",
 //   horario_funcionamento: "Todo quarto domingo do mês, às 10h",
 //   contato: "Renata Barcellini",
-//   telefone: ""
+//   telefone: "",
+//   coordenadas: [-23.6346488,-46.7263886]
 // },
 // { id: "4",
 //   local: "Parque Buenos Aires",
@@ -148,7 +162,8 @@ angular.module('starter.controllers', [])
 //   bairro: "Higienópolis",
 //   horario_funcionamento: "Todo primeiro domingo do mês, às 11h.",
 //   contato: "Natália Andrade",
-//   telefone: ""
+//   telefone: "",
+//   coordenadas: [-23.5458211,-46.660047]
 // },
 // { id: "5",
 //   local: "Parque Severo Gomes",
@@ -156,7 +171,8 @@ angular.module('starter.controllers', [])
 //   bairro: "Granja Julieta",
 //   horario_funcionamento: "Todos os sábados, às 12h30.",
 //   contato: "Marcos Eiji",
-//   telefone: ""
+//   telefone: "",
+//   coordenadas: [-23.6376914,-46.7071982]
 // },
 // { id: "7",
 //   local: "Parque Ceret",
@@ -164,7 +180,8 @@ angular.module('starter.controllers', [])
 //   bairro: "Tatuapé",
 //   horario_funcionamento: "Todo sábado, às 9h",
 //   contato: "Thiago Ferreira",
-//   telefone: ""
+//   telefone: "",
+//   coordenadas: [-23.5555707,-46.568358]
 // },
 // { id: "8",
 //   local: "Alphaville",
@@ -172,7 +189,8 @@ angular.module('starter.controllers', [])
 //   bairro: "Alphaville Industrial",
 //   horario_funcionamento: "Todo primeiro sábado do mês, às 10h",
 //   contato: "Alessandra Filipini",
-//   telefone: ""
+//   telefone: "",
+//   coordenadas: [-23.4919684,-46.8471085]
 // },
 // { id: "9",
 // local: "São Bernardo do Campo",
@@ -180,7 +198,8 @@ angular.module('starter.controllers', [])
 // bairro: "",
 // horario_funcionamento: "Duas vezes por mês, aos domingos, a cada 15 dias, às 10h.",
 // contato: "Tatiana Uehoka",
-// telefone: ""
+// telefone: "",
+// coordenadas: [-23.6801734,-46.5604958]
 // },
 // { id: "10",
 // local: "Itú",
@@ -188,15 +207,10 @@ angular.module('starter.controllers', [])
 // bairro: "",
 // horario_funcionamento: "Todo sábado, às 9h",
 // contato: "Antonio Prates",
-// telefone: ""
+// telefone: "",
+// coordenadas: [-23.2625411,-47.292643]
 // }
 
-.controller('MapaController', function($scope, $http) {
-  $scope.locais = [];
-  $http.get('http://localhost:3000/mapa').success(function(response){
-    $scope.locais = response;
-  });
-})
 
 .controller('TutorialController', function($scope, $stateParams) {
 })
