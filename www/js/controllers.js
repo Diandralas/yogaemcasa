@@ -1,46 +1,70 @@
 angular.module('starter.controllers', [])
 
+// .controller('AppCtrl', function($scope, $ionicModal, $timeout){
+//
+//   // With the new view caching in Ionic, Controllers are only called
+//   // when they are recreated or on app start, instead of every page change.
+//   // To listen for when this page is active (for example, to refresh data),
+//   // listen for the $ionicView.enter event:
+//   //$scope.$on('$ionicView.enter', function(e) {
+//   //});
+//
+//   // // Form data for the login modal
+//   // $scope.loginData = {};
+//   //
+//   // // Create the login modal that we will use later
+//   // $ionicModal.fromTemplateUrl('templates/login.html', {
+//   //   scope: $scope
+//   // }).then(function(modal) {
+//   //   $scope.modal = modal;
+//   // });
+//   //
+//   // // Triggered in the login modal to close it
+//   // $scope.closeLogin = function() {
+//   //   $scope.modal.hide();
+//   // };
+//   //
+//   // // Open the login modal
+//   // $scope.login = function() {
+//   //   $scope.modal.show();
+// };
+
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
 })
 
+.controller('LoginController', function($scope, $state, $http, Sessao) {
+  $scope.data = {};
+
+  $scope.logar = function() {
+
+    $http.post('http://localhost:3000/login', $scope.data).then(function(resposta){
+      if(!resposta.data){
+        alert('Login invalido');
+        return;
+      }
+      Sessao.inicializar(resposta.data);
+      $state.go('app.home');
+    })
+  };
+  $scope.irCadastro = function() {
+    $state.go("cadastro");
+
+  }
+})
+
+.controller('CadastroController', function($scope, $state, $http, Sessao) {
+  $scope.dados = {};
+
+  $scope.cadastrar = function(){
+    console.log($scope.dados);
+    $http.post('http://localhost:3000/usuario', $scope.dados).then(function(resposta){
+      console.log($scope.dados);
+      Sessao.inicializar(resposta.dados);
+      console.log($scope.dados);
+      console.log("Cadastro ok!")
+    })
+  }
+})
 .controller('HomeController', function($scope, $state) {
   $scope.home = [
     { title: 'Meditação', pagina: 'meditacao', id: 1, img: 'img/meditacao.png'},
@@ -56,8 +80,6 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('MeditacaoController', function($scope, $stateParams) {
-})
 
 .controller('ExerciciosController', function($scope, $stateParams, $state) {
   $scope.exercicios = [
@@ -70,17 +92,6 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('MeditacaoController', function($scope, $stateParams) {
-})
-
-.controller('LoginController', function($scope, $stateParams) {
-})
-
-.controller('PosturaController', function($scope, $stateParams) {
-})
-
-.controller('ConfigController', function($scope, $stateParams) {
-})
 
 .controller('GlossarioController', function($scope, $http, $state, $ionicPopup) {
   $scope.dados = {};
@@ -223,7 +234,14 @@ angular.module('starter.controllers', [])
 // telefone: "",
 // coordenadas: [-23.2625411,-47.292643]
 // }
+.controller('PosturaController', function($scope, $stateParams) {
+})
 
+.controller('MeditacaoController', function($scope, $stateParams) {
+})
+
+.controller('ConfigController', function($scope, $stateParams) {
+})
 
 .controller('TutorialController', function($scope, $stateParams) {
 })

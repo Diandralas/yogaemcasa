@@ -1,0 +1,23 @@
+<ion-view view-title="Cadastro Yogi" class="pagina-cadastro">
+  <ion-content >
+
+    <h1 class="title">Cadastro Yogi</h1>
+
+    <div class="list list-inset" id="cadastro-input">
+      <label class="item item-input">
+        <input type="text" placeholder="Nome" ng-model="dados.nome">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="E-mail" ng-model="dados.email">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Senha" ng-model="dados.senha">
+      </label>
+
+      <button class="button button-block button-positive" ng-click="cadastrar()"
+      type="submit">Cadastrar</button>
+
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -27,6 +27,7 @@ app.listen(3000, function() {
 // importa controllers
 var GlossarioController = require('./controllers/glossario.js');
 var LocaisController = require('./controllers/locais.js');
+var UsuarioController = require('./controllers/usuarios.js');
 
 // cria endpoints para funcoes de controllers
 app.get('/glossario', GlossarioController.listar);
@@ -36,3 +37,7 @@ app.post('/locais', LocaisController.atualizar);
 app.delete('/locais', LocaisController.apagar);
 app.put('/locais/:id', LocaisController.alterar);
 app.get('/mapa', LocaisController.ordenar);
+
+app.get('/usuario', UsuarioController.listarusuarios);
+app.post('/usuario', UsuarioController.criarusuario);
+app.post('/login', UsuarioController.validarusuario);
