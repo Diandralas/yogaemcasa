@@ -13,6 +13,29 @@ ng-map{
   width: 100%;
 }
 
+.login{
+  padding-top: 280px;
+}
+
+.login img{
+  display: block;
+  margin: auto;
+  padding-bottom: 30px;
+  }
+
+.col{
+  padding: 30px;
+  position: relative;
+  margin-left: 20px;
+}
+
+.pagina-cadastro{
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+
+}
+
 .pagina-exercicios img{
   width: 100%;
   margin: 10% auto;
@@ -107,7 +130,7 @@ height: 170px;
 .slider-pager{
   height: 25px;
 }
-
+kk000099
 #bolinhas{
   height: 60px;
   bottom: 12px;
@@ -135,7 +158,7 @@ font-family: 'Raleway', sans-serif;
   margin-top: -50px;
   margin-left: 125px;
   border: 3px solid  white;
-  font-family: 'Fresca', sans-serif;
+
 }
 
 .content{
@@ -154,6 +177,12 @@ font-family: 'Raleway', sans-serif;
 
 #buda{
   background-image: url("../img/buda.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#sunset{
+  background-image: url("../img/yoga-sunset.png");
   background-position: center;
   background-size: cover;
 }

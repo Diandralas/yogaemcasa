@@ -1,12 +1,15 @@
 <ion-view name="tab-item" view-title="Yoga">
-  <ion-content class="perfil">
+  <ion-content id="sunset" class="login">
     <div class="banner-container-home">
+      <img src= "../img/logo-rosa.png"  alt="logo">
         </div>
-    <div class="loginForm">
+            <div class="loginForm">
       <div class="list list-inset entrada">
         <label class="item item-input user">
           <input type="text" placeholder="Nome" ng-model="data.username">
         </label>
+        </div>
+          <div class="list list-inset entrada">
         <label class="item item-input password">
           <input type="text" placeholder="Senha" ng-model="data.password">
         </label>
@@ -14,13 +17,13 @@
     <div>
       <div class="row">
         <div class="col">
-        <button class="button button-assertive buttonSign" ng-click="logar()">
+        <button class="button button-dark" ng-click="logar()">
           Login
         </button>
         </div>
         <div class="col">
-        <button class="button button-positive buttonSup" ng-click="irCadastro()">
-        Cadastre-se
+        <button class="button button-royal" ng-click="irCadastro()">
+        Cadastrar
         </button>
       </div>
     </div>
