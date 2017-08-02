@@ -33,16 +33,19 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginController', function($scope, $state, $http, Sessao) {
-  $scope.data = {};
+  $scope.dados = {};
 
   $scope.logar = function() {
 
-    $http.post('http://localhost:3000/login', $scope.data).then(function(resposta){
-      if(!resposta.data){
+    $http.post('http://localhost:3000/login', $scope.dados).then(function(resposta){
+      if(resposta.dados){
         // alert('Login invalido');
+        console.log(resposta);
         return;
       }
-      Sessao.inicializar(resposta.data);
+      console.log(resposta);
+      Sessao.inicializar(resposta.dados);
+      console.log('fora do if 2');
       $state.go('app.home');
     })
   };
@@ -113,7 +116,7 @@ angular.module('starter.controllers', [])
     alertPopup.then(function(res) {
       console.log('Callback');
     });
-  };
+    };
 })
 
 .controller('LocaisController', function($scope, $stateParams, $http, $ionicPopup){

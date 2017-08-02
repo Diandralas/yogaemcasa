@@ -4,7 +4,7 @@
 
     <ul class="list">
       <li ng-repeat="item in glossario | filter:palavraBusca" ng-click="showPopup(item)"> <!-- o item é o objeto inteiro, ai depois vc só seleciona qual item, e o glossario é um vetor de objetos e o item é cada objeto dentro deste vetor -->
-          <img src="img/lotus.png">
+          <img src="img/lotus.png" id="icon">
           <p>{{item.palavra}}</p>
       </li>
     </ul>

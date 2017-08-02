@@ -29,11 +29,11 @@ exports.criarusuario = function (req, res) {
 exports.validarusuario = function (req, res) {
   var usuario = req.body;
 
-  req.db.collection('usuarios').findOne({"username": usuario.username, "password": usuario.password}, function(err, result) {
+  req.db.collection('usuarios').findOne({"nome": usuario.nome, "senha": usuario.senha}, function(err, result) {
     if (err) {
       return res.sendStatus(401);
     }
-    console.log(result);
+    // console.log(result);
     res.send(result);
   });
 };
