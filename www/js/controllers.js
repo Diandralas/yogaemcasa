@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
 
     $http.post('http://localhost:3000/login', $scope.data).then(function(resposta){
       if(!resposta.data){
-        alert('Login invalido');
+        // alert('Login invalido');
         return;
       }
       Sessao.inicializar(resposta.data);
@@ -64,7 +64,11 @@ angular.module('starter.controllers', [])
       console.log("Cadastro ok!")
     })
   }
+  $scope.cancelar = function() {
+    $state.go("app.home");
+  }
 })
+
 .controller('HomeController', function($scope, $state) {
   $scope.home = [
     { title: 'Meditação', pagina: 'meditacao', id: 1, img: 'img/meditacao.png'},

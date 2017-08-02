@@ -29,13 +29,21 @@ ng-map{
   margin-left: 20px;
 }
 
-.pagina-cadastro{
+.pagina-cadastro h1{
   color: white;
   font-family: sans-serif;
   text-align: center;
-
+  padding-top: 120px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+.pagina-cadastro div{
+  margin: 10px;
 }
 
+.pagina-cadastro section{
+  padding-top: 60px;
+}
 .pagina-exercicios img{
   width: 100%;
   margin: 10% auto;
@@ -46,12 +54,6 @@ ng-map{
 .pagina-exercicios{
   width: 100%;
 }
-
-#cadastro-input {
-	padding-top: 20px;
-	margin-top: 25%;
-}
-
 
 .pagina-respirar{
   padding: 12px;
